@@ -81,9 +81,9 @@ col2.dataframe(
 col1.dataframe(
     pd.DataFrame({"Currency": [stock_data_info["Basic Information"]["currency"]]}),
     hide_index=True,
-    width=500,
+    width=250,
 )
-col2.dataframe(pd.DataFrame({"Exchange": [stock_exchange]}), hide_index=True, width=500)
+col2.dataframe(pd.DataFrame({"Exchange": [stock_exchange]}), hide_index=True, width=250)
 
 #####Basic Information End#####
 
