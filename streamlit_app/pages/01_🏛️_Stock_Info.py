@@ -69,21 +69,21 @@ col1, col2 = st.columns(2)
 col1.dataframe(
     pd.DataFrame({"Issuer Name": [stock_data_info["Basic Information"]["longName"]]}),
     hide_index=True,
-    width=500,
+    width=150,
 )
 col2.dataframe(
     pd.DataFrame({"Symbol": [stock_ticker]}),
     hide_index=True,
-    width=500,
+    width=150,
 )
 
 # Row 2
 col1.dataframe(
     pd.DataFrame({"Currency": [stock_data_info["Basic Information"]["currency"]]}),
     hide_index=True,
-    width=250,
+    width=150,
 )
-col2.dataframe(pd.DataFrame({"Exchange": [stock_exchange]}), hide_index=True, width=250)
+col2.dataframe(pd.DataFrame({"Exchange": [stock_exchange]}), hide_index=True, width=150)
 
 #####Basic Information End#####
 
