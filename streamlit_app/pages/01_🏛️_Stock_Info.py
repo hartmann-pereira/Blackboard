@@ -76,6 +76,16 @@ col2.dataframe(
     hide_index=True,
     width=150,
 )
+col3.dataframe(
+    pd.DataFrame({"Current Price": [stock_data_info["Market Data"]["currentPrice"]]}),
+    hide_index=True,
+    width=500,
+)
+col4.dataframe(
+    pd.DataFrame({"Previous Close": [stock_data_info["Market Data"]["previousClose"]]}),
+    hide_index=True,
+    width=500,
+)
 
 # Row 2
 col1.dataframe(
