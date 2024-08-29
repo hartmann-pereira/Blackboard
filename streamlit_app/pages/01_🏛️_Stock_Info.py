@@ -49,7 +49,7 @@ except:
 #####Title#####
 
 # Add title to the app
-st.markdown("# **Stock Info Plus**")
+st.markdown("# **Stock Info**")
 
 # Add a subtitle to the app
 st.markdown("##### **Enhancing Your Stock Market Insights**")
