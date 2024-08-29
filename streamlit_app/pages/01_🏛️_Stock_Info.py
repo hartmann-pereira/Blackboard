@@ -63,7 +63,7 @@ st.markdown("##### **Agrola Stock Market Insights Tool**")
 st.markdown("## **Basic Information**")
 
 # Create 2 columns
-col1, col2 = st.columns(2)
+col1, col2, col3, col4 = st.columns(4)
 
 # Row 1
 col1.dataframe(
