@@ -52,7 +52,7 @@ except:
 st.markdown("# **Stock Info**")
 
 # Add a subtitle to the app
-st.markdown("##### **Enhancing Your Stock Market Insights**")
+st.markdown("##### **Agrola Stock Market Insights Tool**")
 
 #####Title End#####
 
