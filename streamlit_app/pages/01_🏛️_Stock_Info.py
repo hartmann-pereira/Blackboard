@@ -79,12 +79,12 @@ col2.dataframe(
 col3.dataframe(
     pd.DataFrame({"Current Price": [stock_data_info["Market Data"]["currentPrice"]]}),
     hide_index=True,
-    width=500,
+    width=150,
 )
 col4.dataframe(
     pd.DataFrame({"Previous Close": [stock_data_info["Market Data"]["previousClose"]]}),
     hide_index=True,
-    width=500,
+    width=150,
 )
 
 # Row 2
@@ -94,6 +94,17 @@ col1.dataframe(
     width=150,
 )
 col2.dataframe(pd.DataFrame({"Exchange": [stock_exchange]}), hide_index=True, width=150)
+# Row 1
+col3.dataframe(
+    pd.DataFrame({"Open": [stock_data_info["Market Data"]["open"]]}),
+    hide_index=True,
+    width=150,
+)
+col4.dataframe(
+    pd.DataFrame({"Day Low": [stock_data_info["Market Data"]["dayLow"]]}),
+    hide_index=True,
+    width=150,
+)
 
 #####Basic Information End#####
 
