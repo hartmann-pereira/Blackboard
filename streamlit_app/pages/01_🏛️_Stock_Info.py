@@ -1,5 +1,6 @@
 # Import streamlit
 import streamlit as st
+import plotly.graph_objects as go
 
 # Import helper functions
 from helper import *
@@ -34,6 +35,17 @@ st.sidebar.markdown("### **Stock ticker**")
 st.sidebar.text_input(
     label="Stock ticker code", placeholder=stock_ticker, disabled=True
 )
+
+# Fetch and store periods and intervals
+periods = fetch_periods_intervals()
+
+# Add a selector for period
+st.sidebar.markdown("### **Select period**")
+period = st.sidebar.selectbox("Choose a period", list(periods.keys()))
+
+# Add a selector for interval
+st.sidebar.markdown("### **Select interval**")
+interval = st.sidebar.selectbox("Choose an interval", periods[period])
 
 #####Sidebar End#####
 
@@ -107,6 +119,36 @@ col4.dataframe(
 )
 
 #####Basic Information End#####
+
+# Fetch the stock historical data
+stock_data = fetch_stock_history(stock_ticker, period, interval)
+#####Graph Example#####
+
+st.markdown("## **Stock Graph**")
+
+# Create a plot for the historical data
+fig = go.Figure(
+    data=[
+        go.Candlestick(
+            x=stock_data.index,
+            open=stock_data["Open"],
+            high=stock_data["High"],
+            low=stock_data["Low"],
+            close=stock_data["Close"],
+        )
+    ]
+)
+
+# Customize the historical data graph
+fig.update_layout(xaxis_rangeslider_visible=False)
+
+# Use the native streamlit theme.
+st.plotly_chart(fig, use_container_width=True)
+
+#####Historical Data Graph End#####
+
+####Graph Example End#####
+
 
 
 #####Market Data#####
