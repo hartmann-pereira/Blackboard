@@ -7,8 +7,8 @@ from helper import *
 
 # Configure the page
 st.set_page_config(
-    page_title="Stock Price Prediction",
-    page_icon="📈",
+    page_title="Stock Price Prediction"
+    
 )
 
 
