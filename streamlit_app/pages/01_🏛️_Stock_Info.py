@@ -148,6 +148,24 @@ st.plotly_chart(fig, use_container_width=True)
 #####Historical Data Graph End#####
 
 ####Graph Example End#####
+# Create a plot for the historical data
+fig = go.Figure(
+    data=[
+        go.Scatter(
+            x=stock_data.index,
+            y=stock_data["Open"],
+            mode="lines",
+            name="Stock Open Price Line Chart"
+            
+        )
+    ]
+)
+
+# Customize the historical data graph
+fig.update_layout(xaxis_rangeslider_visible=False)
+
+# Use the native streamlit theme.
+st.plotly_chart(fig, use_container_width=True)
 
 
 
