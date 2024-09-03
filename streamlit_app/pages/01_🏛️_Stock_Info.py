@@ -1,6 +1,7 @@
 # Import streamlit
 import streamlit as st
 import plotly.graph_objects as go
+import datetime
 
 # Import helper functions
 from helper import *
@@ -121,11 +122,18 @@ col4.dataframe(
 
 #####Basic Information End#####
 
+
+# testing auto rerun of graph data 
+@st.experimental_fragment(run_every=120)
+def generate_chart():
+
 # Fetch the stock historical data
 stock_data = fetch_stock_history(stock_ticker, period, interval)
 #####Graph Example#####
 
 st.markdown("## **Stock Graph**")
+
+
 
 # Create a plot for the historical data
 fig = go.Figure(
@@ -147,6 +155,9 @@ fig.update_layout(xaxis_rangeslider_visible=False)
 st.plotly_chart(fig, use_container_width=True)
 
 #####Historical Data Graph End#####
+with st.container():
+    generate_chart()
+
 
 ####Graph Example End#####
 # Create a plot for the historical data
