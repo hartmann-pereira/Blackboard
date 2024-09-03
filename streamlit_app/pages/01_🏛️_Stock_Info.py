@@ -125,10 +125,11 @@ col4.dataframe(
 
 # testing auto rerun of graph data 
 @st.experimental_fragment(run_every=120)
+stock_data = fetch_stock_history(stock_ticker, period, interval)
 def generate_chart():
 
 # Fetch the stock historical data
-    stock_data = fetch_stock_history(stock_ticker, period, interval)
+   
 #####Graph Example#####
 
     st.markdown("## **Stock Graph**")
