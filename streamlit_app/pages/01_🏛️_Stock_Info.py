@@ -128,31 +128,31 @@ col4.dataframe(
 def generate_chart():
 
 # Fetch the stock historical data
-stock_data = fetch_stock_history(stock_ticker, period, interval)
+    stock_data = fetch_stock_history(stock_ticker, period, interval)
 #####Graph Example#####
 
-st.markdown("## **Stock Graph**")
+    st.markdown("## **Stock Graph**")
 
 
 
 # Create a plot for the historical data
-fig = go.Figure(
-    data=[
-        go.Candlestick(
-            x=stock_data.index,
-            open=stock_data["Open"],
-            high=stock_data["High"],
-            low=stock_data["Low"],
-            close=stock_data["Close"],
-        )
-    ]
-)
+    fig = go.Figure(
+        data=[
+            go.Candlestick(
+                x=stock_data.index,
+                open=stock_data["Open"],
+                high=stock_data["High"],
+                low=stock_data["Low"],
+                close=stock_data["Close"],
+            )
+        ]
+    )
 
 # Customize the historical data graph
-fig.update_layout(xaxis_rangeslider_visible=False)
+    fig.update_layout(xaxis_rangeslider_visible=False)
 
 # Use the native streamlit theme.
-st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, use_container_width=True)
 
 #####Historical Data Graph End#####
 with st.container():
